@@ -17,5 +17,22 @@ namespace net_calculator_tester
                 return float.NaN;
             return a / b; 
         }
+        public static double Exponential(int a, int b)
+        {
+            double result = 1;
+            if (b == 0)
+                return 1;
+            if (a == 0)
+                return 0;
+            if (b > 0)
+            {
+                for(int i = 0; i < b; i++)
+                    result *= a;
+                return result;
+            }
+            for (int i = 0; i < -b; i++)
+                result /= a;
+            return result;
+        }
     }
 }
