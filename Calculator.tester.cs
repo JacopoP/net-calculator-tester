@@ -35,8 +35,10 @@ namespace tester
         [TestCase(15.9f, 0f)]
         public void DivideTest(float a, float b)
         {
-            Assume.That(b != 0);
-            Assert.That(Calculator.Divide(a, b), Is.EqualTo(a / b));
+            if(b != 0)
+                Assert.That(Calculator.Divide(a, b), Is.EqualTo(a / b));
+            else
+                Assert.That(Calculator.Divide(a, b), Is.EqualTo(float.NaN));
         }
     }
 }
